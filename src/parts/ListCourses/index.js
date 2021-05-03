@@ -1,0 +1,31 @@
+import React from 'react';
+import Link from 'next/link';
+
+import RenderItem from './RenderItem';
+
+function ListCourse({data}) {
+    return (
+        <div>
+            <div className="flex justify-between items-center mx-auto">
+                <div>
+                    <p className="text-sm text-gray-400 pl-6 md:pl-0">New Classes</p>
+                    <h2 className="text-2xl font-regular hidden md:block" style={{color: "#132B50"}}>Summer <span className="text-green-400">Productive</span></h2>
+                </div>
+                <div>
+                    <Link href="/course"><a><p className="text-sm text-gray-400 underline pr-6 md:pr-0">View All Classes</p></a></Link>
+                </div>
+            </div>
+            <div className="flex flex-wrap justify-start mx-auto">
+                {
+                    data.map(item => {
+                        return (
+                            <RenderItem key={item.id} data={item}></RenderItem>
+                        )
+                    })
+                }
+            </div>
+        </div>
+    )
+}
+
+export default ListCourse;
