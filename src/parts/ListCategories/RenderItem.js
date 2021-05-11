@@ -7,7 +7,7 @@ function RenderItem({item}) {
     return (
         <div className="card w-1/2 md:w-1/3 lg:w-1/6 px-4 mb-4 lg-mb-0 relative">
             <div className="card-category border border-gray-100 shadow-md px-4 py-4 flex justify-between flex-col">
-                <div>
+                <div className="hover:fill-white">
                     {item.icon}
                 </div>
                 <div className="mt-10" style={{height: 100, maxWidth: 172}}>

@@ -9,7 +9,7 @@ function Footer() {
       className="mx-auto"
     >
       <div className="container px-10 py-10 mx-auto flex flex-wrap justify-between">
-        <div className="w-1/2 lg:w-1/6 mb-6 lg:mb-0">
+        <div className="w-1/2 lg:w-1/5 mb-6 lg:mb-0">
           <h2 className="text-white mb-4">Company</h2>
           <ul>
             <li>
@@ -42,7 +42,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="w-1/2 lg:w-1/6 mb-6 lg:mb-0">
+        <div className="w-1/2 lg:w-1/5 mb-6 lg:mb-0">
           <h2 className="text-white mb-4">Student</h2>
           <ul>
             <li>
@@ -75,7 +75,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="w-full md:w-1/2 lg:w-1/6 mb-6 lg:mb-0">
+        <div className="w-full md:w-1/2 lg:w-1/5 mb-6 lg:mb-0">
           <h2 className="text-white mb-4">Touch Us</h2>
           <ul>
             <li>
@@ -111,7 +111,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="w-full md:w-1/2 lg:w-1/2">
+        <div className="w-full md:w-1/2 lg:w-2/5">
           <h2 className="text-white mb-4">Promotions</h2>
           <ul>
             <li>

@@ -11,11 +11,11 @@ function Header(props) {
                 <LightLogo ></LightLogo>
             </div>
                 <ul className="flex">
-                    <li><Link href="/"><a className={[linkColor, "px-6 py-3 hover:text-green-400"].join(" ")}>Home</a></Link></li>
+                    <li><Link href="/" as="/"><a className={[linkColor, "px-6 py-3 hover:text-green-400"].join(" ")}>Home</a></Link></li>
                     <li><Link href="/"><a className={[linkColor, "px-6 py-3 hover:text-green-400"].join(" ")}>Pricing</a></Link></li>
                     <li><Link href="/"><a className={[linkColor, "px-6 py-3 hover:text-green-400"].join(" ")}>Features</a></Link></li>
                     <li><Link href="/"><a className={[linkColor, "px-6 py-3 hover:text-green-400"].join(" ")}>Story</a></Link></li>
-                    <li><Link href="/"><a className="text-white px-6 py-3 ml-3 tombol-header">{props.login ? 'Masuk' : 'Daftar'}</a></Link></li>
+                    <li><Link href="/"><a className="text-white px-6 py-3 ml-3 bg-indigo-400 hover:bg-indigo-500">{props.login ? 'Masuk' : 'Daftar'}</a></Link></li>
                 </ul>
         </header>
     )

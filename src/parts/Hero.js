@@ -4,26 +4,25 @@ function Hero() {
   const [email, setEmail] = useState('');
 
   function submit() {
-    window.open('http://localhost:3000/')
+    window.open(`http://localhost:3000/${email}`)
   }
 
-  console.log('email : ', email);
   return (
     <div className="flex justify-between items-center">
       <div className="w-full md:w-1/2">
-        <h1 className="text-5xl text-white mb-5 hidden md:block">
+        <h1 className="text-2xl md:text-5xl text-white mb-2 md:mb-5">
           <span className="text-green-400 mb-4">The New </span>Way to
         </h1>
-        <h1 className="text-5xl text-white mb-5 hidden md:block">
+        <h1 className="text-2xl md:text-5xl text-white mb-5 ">
           Achive Good <span className="text-green-400">Skills</span>
         </h1>
-        <p className="text-white text-lg mb-8 hidden md:block">
-          We provide tons of pathskill that <br className="hidden md:block" />{" "}
+        <p className="text-white text-lg mb-8">
+          We provide tons of pathskill that <br className="" />{" "}
           you can choose and focus on
         </p>
         <form onSubmit={submit} className="flex">
           <input
-            className="bg-white px-4 py-3 w-full md:w-1/2 focus:outline-none border-0 md:border-blue-700"
+            className="bg-white px-4 py-3 w-full md:w-1/2 focus:outline-none border lg:border-0 md:border-blue-700"
             type="text"
             placeholder="Your Email Address"
             onChange={(e) => setEmail(e.target.value)}

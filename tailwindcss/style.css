@@ -106,3 +106,73 @@
     color: #53589D
 }
 
+.video-wrapper {
+    @apply inset-0;
+    @apply z-0;
+    position: absolute;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-wrapper iframe {
+    @apply absolute; 
+    @apply top-0;
+    @apply left-0;
+    @apply w-full;
+    @apply h-full;
+}
+
+.meta-price-enter {
+    opacity: 0;
+    bottom: -100%;
+}
+
+.meta-price-enter-active {
+    opacity: 1;
+    bottom: 0;
+}
+
+.meta-price-exit {
+    opacity: 1;
+    bottom: 0;
+}
+
+.meta-price-exit-active {
+    opacity: 0;
+    bottom: -100%;
+}
+
+.meta-price-enter-done {
+    @apply opacity-100;
+    @apply fixed;
+    @apply bottom-0;
+}
+
+.item .image-course:before {
+    content: '';
+    position: absolute;
+    @apply inset-0;
+    background-color: #2E37A4;
+    opacity: 0;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+.item:hover .image-course:before {
+    content: '';
+    opacity: 0.75;
+}
+
+.image-course .btn-eye {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    opacity: 0;
+}
+
+.image-course:hover .btn-eye {
+    opacity: 1;
+}
+
+
+
