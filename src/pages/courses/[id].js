@@ -15,6 +15,7 @@ import IconVideoMenu from '../../../public/images/logo-video-menu.svg';
 import IconSertificateMenu from '../../../public/images/logo-sertifikat-menu.svg';
 import Footer from "../../parts/Footer";
 import ImageCourse from "../../parts/Details/ImageCourse";
+import RenderView from "../../parts/Details/RenderView";
 
 function DetailsCourse({ data }) {
   console.log(data);
@@ -135,6 +136,23 @@ function DetailsCourse({ data }) {
                 )
               })
             }
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full mt-10 px-0 md:px-4">
+        <div className="w-3/4 mx-auto">
+          <div className="container w-3/4">
+            <h1 className="text-lg" style={{color: '#132B50'}}>You Will <span style={{ color: "#36C2CF" }}>Learn</span></h1>
+          </div>
+          <div className="mt-5 w-full md:w-3/4">
+            <div className="w-full md:w-3/4">
+              {
+                data.chapter.length > 0 ? (
+                  <RenderView previews={data.chapter}></RenderView>
+                ) : (<div className="w-full text-center">No Chapter Found</div>)
+              }
+            </div>
           </div>
         </div>
       </section>
