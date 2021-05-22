@@ -16,9 +16,10 @@ import IconSertificateMenu from '../../../public/images/logo-sertifikat-menu.svg
 import Footer from "../../parts/Footer";
 import ImageCourse from "../../parts/Details/ImageCourse";
 import RenderView from "../../parts/Details/RenderView";
+import Mentor from "../../parts/Details/Mentor";
+import HappyStudent from "../../parts/Details/HappyStudent";
 
 function DetailsCourse({ data }) {
-  console.log(data);
 
   const footer = useRef(null);
   
@@ -30,7 +31,7 @@ function DetailsCourse({ data }) {
       
       const stickyMetaToggler = () => {
         // setIsSticcky
-        setIsSticky(stickyOffsetTop >= window.pageYOffset + window.innerHeight);
+        setIsSticky(stickyOffsetTop > window.pageYOffset + window.innerHeight);
       }
 
       
@@ -51,28 +52,12 @@ function DetailsCourse({ data }) {
       </Head>
 
       <section
-        className="relative px-4 pt-10 overflow-hidden"
-        style={{ height: 660 }}
+        className="relative px-4 pt-10 overflow-hidden h-screen"
+        style={{height: 660}}
       >
         {data?.thumbnail && (
-          <div className="video-wrapper min-h-screen md:min-h-full">
-            {/* <Youtube
-              videoId={data?.chapter?.[0]?.lesson?.[0]?.video}
-              id={data?.chapters?.[0]?.lessons?.[0]?.video}
-              opts={{
-                playerVars: {
-                  loop: 1,
-                  mute: 1,
-                  autoplay: 1,
-                  controls: 0,
-                  showinfo: 0,
-                },
-              }}
-              onEnd={(event) => {
-                event.target.playVideo();
-              }}
-            ></Youtube> */}
-            <img className="absolute inset-0 w-full" src={data?.thumbnail} alt="" />
+          <div className="min-h-screen z-0 inset-0 absolute">
+            <img className="absolute inset-0 w-full h-full object-cover" src={data?.thumbnail} alt="" />
           </div>
         )}
 
@@ -80,7 +65,7 @@ function DetailsCourse({ data }) {
         <div className="absolute w-full inset-0 object-fill z-10 flex justify-center items-center flex-column">
           <div className="text-center">
             <p className="text-white mb-5">Kelas Onilne:</p>
-            <h1 className="text-3xl md:text-6xl" style={{ color: "#36C2CF" }}>
+            <h1 className="text-3xl md:text-6xl font-semibold" style={{ color: "#36C2CF" }}>
               {data?.name}
             </h1>
           </div>
@@ -116,9 +101,9 @@ function DetailsCourse({ data }) {
     
       <section className="w-full mt-10 px-0 md:px-4">
         <div className="w-3/4 mx-auto">
-          <div className="container w-3/4">
-            <h1 className="text-lg" style={{color: '#132B50'}}>About <span style={{ color: "#36C2CF" }}>Course</span></h1>
-            <h3 className="mt-3 leading-relaxed text-md text-gray-400">{data?.description}</h3>
+          <div className="container w-full md:w-3/4">
+            <h1 className="text-xl" style={{color: '#132B50'}}>About <span style={{ color: "#36C2CF" }}>Course</span></h1>
+            <h3 className="mt-3 leading-relaxed text-justify text-md  text-gray-400">{data?.description}</h3>
           </div>
         </div>
       </section>
@@ -126,15 +111,16 @@ function DetailsCourse({ data }) {
       <section className="mt-10 w-full px-0 md:px-4">
         <div className="w-3/4 mx-auto">
           <div className="container w-3/4">
-            <h1 className="text-lg" style={{color: '#132B50'}}>Images <span style={{ color: "#36C2CF" }}>Course</span></h1>
+            <h1 className="text-xl" style={{color: '#132B50'}}>Images <span style={{ color: "#36C2CF" }}>Course</span></h1>
           </div>
           <div className="w-full md:w-3/4 mt-5 flex justify-between flex-wrap items-center">
             {
+              data?.image_course?.length > 0 ?
               data.image_course.map((item, index) => {
                 return (
                   <ImageCourse data={item.image} key={index}></ImageCourse>
                 )
-              })
+              }) : <div className="w-full md:w-3/4 text-center text-md text-gray-400">No Images Yet</div>
             }
           </div>
         </div>
@@ -143,16 +129,45 @@ function DetailsCourse({ data }) {
       <section className="w-full mt-10 px-0 md:px-4">
         <div className="w-3/4 mx-auto">
           <div className="container w-3/4">
-            <h1 className="text-lg" style={{color: '#132B50'}}>You Will <span style={{ color: "#36C2CF" }}>Learn</span></h1>
+            <h1 className="text-xl" style={{color: '#132B50'}}>You Will <span style={{ color: "#36C2CF" }}>Learn</span></h1>
           </div>
           <div className="mt-5 w-full md:w-3/4">
             <div className="w-full md:w-3/4">
               {
                 data.chapter.length > 0 ? (
                   <RenderView previews={data.chapter}></RenderView>
-                ) : (<div className="w-full text-center">No Chapter Found</div>)
+                ) : (<div className="w-full text-center text-md text-gray-400">No Chapter Found</div>)
               }
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full mt-10 px-0 md:px-4">
+        <div className="w-3/4 mx-auto">
+          <div className="container w-3/4">
+            <h1 className="text-xl" style={{color: '#132B50'}}>Our <span style={{ color: "#36C2CF" }}>Instructor</span></h1>
+          </div>
+          <div className="mt-5 w-full md:w-3/4">
+            <Mentor data={data.mentor}></Mentor>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full mt-10 px-0 md:px-4">
+        <div className="w-3/4 mx-auto">
+          <div className="container w-3/4">
+            <h1 className="text-xl" style={{color: '#132B50'}}>Happy <span style={{ color: "#36C2CF" }}>Students</span></h1>
+          </div>
+          <div className="mt-5 w-full md:w-3/4">
+            {
+              data?.reviews?.length > 0 ? 
+              data.reviews.map((item, index) => {
+                return (
+                  <HappyStudent key={index} data={item}></HappyStudent>
+                )
+              }) : <div className="w-full md:w-3/4 text-center text-md text-gray-400">No Review Yet</div>
+            }
           </div>
         </div>
       </section>
@@ -175,9 +190,6 @@ function DetailsCourse({ data }) {
             </div>
           </CSSTransition>
       </section>
-
-      <div style={{height: 2000}}></div>
-
 
       <section className="mx-auto mt-24" ref={footer}>
         <Footer></Footer>

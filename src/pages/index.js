@@ -34,7 +34,7 @@ function Home({ data }) {
           <Client></Client>
         </section>
         <section className="container mx-auto mt-24 mb-12">
-          <ListCourse data={data}></ListCourse>
+          <ListCourse data={data} all></ListCourse>
         </section>
         <section className="container mx-auto mt-24 mb-12">
           <ListCategories></ListCategories>

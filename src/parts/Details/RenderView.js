@@ -6,7 +6,7 @@ import Youtube from "react-youtube";
 import Modal from "../../components/Modal";
 
 import IconLock from "../../../public/images/icon-lock.svg";
-import IconPlay from "../../../public/images/btn_play.svg";
+import IconPlay from "../../../public/images/icon-play-blue.svg";
 
 function RenderView({ previews }) {
   return (
