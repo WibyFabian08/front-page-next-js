@@ -183,7 +183,7 @@ function DetailsCourse({ data }) {
                   </div>
                   <div className="flex items-center">
                     <h1 className="mr-3 text-xs md:text-xl" style={{ color: "#36C2CF" }}>{data?.type === 'free' ? 'Free' : <span>Rp. {formatThousand(data?.price)}</span> }</h1>  
-                    <a href={`http://localhost:3000/join`} target="_blank" rel="noopener noreferrer" className="button-form px-6 py-3 text-white">Enrol Now</a>
+                    <a href={`http://localhost:3030/joined/${data?.id}`} target="_blank" rel="noopener noreferrer" className="button-form px-6 py-3 text-white">Enrol Now</a>
                   </div>
                 </div>
               </div>

@@ -22,7 +22,7 @@ function HappyStudent({ data }) {
       <p className="text-gray-600 text-justify text-sm">{data.note}</p>
       <div className="flex mt-3 items-center">
           {data.users.avatar.length > 0 ? (
-            <img src={data.users.avatar} alt="" />
+            <img src={data.users.avatar} className="w-8 h-8 object-cover rounded-full" alt="" />
           ) : (
             <img src="../../../images/icon-photo-null.png" className="w-8 h-8 object-cover rounded-full" alt="" />
           )}
