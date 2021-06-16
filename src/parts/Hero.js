@@ -9,7 +9,7 @@ function Hero() {
 
   return (
     <div className="flex justify-between items-center">
-      <div className="w-full md:w-1/2">
+      <div className="w-full md:w-1/2 -mt-24">
         <h1 className="text-2xl md:text-5xl text-white mb-2 md:mb-5">
           <span className="text-green-400 mb-4">The New </span>Way to
         </h1>

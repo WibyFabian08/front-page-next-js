@@ -10,6 +10,8 @@ function Header(props) {
 
   const [toggle, setToggle] = useState(false);
 
+  const TOP = toggle ? 0 : -10000;
+
   useEffect(() => {
     const userCookie = decodeURIComponent(window.document.cookie)
       ?.split(";")
@@ -22,7 +24,7 @@ function Header(props) {
   const linkColor = props.onDark ? "text-white" : "#132B50";
   return (
     <>
-      <header className="flex justify-between items-center invisible md:visible">
+      <header className="flex justify-between items-center invisible md:visible mt-10">
         <div style={{ height: 54, width: 32 }}>
           <LightLogo></LightLogo>
         </div>
@@ -114,18 +116,27 @@ function Header(props) {
           <li></li>
         </ul>
       </header>
-      <header className="flex flex-col inset-0 sm:hidden -mt-24 -ml-6 -mr-6 overflow-hidden">
-        {!toggle && (
+
+      {!toggle && (
+        <>
+          <div style={{ height: 54, width: 32 }} className="absolute top-0 left-0 p-4 sm:hidden">
+            <LightLogo></LightLogo>
+          </div>
           <button
             onClick={() => setToggle(!toggle)}
-            className={["toggle z-100 p-3 focus:outline-none sm:hidden"].join(
-              " "
-            )}
+            className={[
+              "toggle focus:outline-none sm:hidden absolute top-0 right-0 px-4 py-7",
+            ].join(" ")}
           >
             <img src="../../images/menu.png" width={30} height={30} alt="" />
           </button>
-        )}
+        </>
+      )}
 
+      <header
+        className="flex flex-col sm:hidden absolute top-0 left-0 right-0 overflow-hidden transition-all duration-300"
+        style={{ top: TOP }}
+      >
         {toggle && (
           <ul
             className="flex flex-col overflow-hidden transition-all duration-300 p-4"
@@ -148,31 +159,22 @@ function Header(props) {
               />
             </button>
             <li className="p-3">
-              <Link
-                href="/"
-              >
+              <Link href="/">
                 <a className="px-6 py-3 hover:text-green-400">Home</a>
-                
               </Link>
             </li>
             <li className="p-3">
-              <Link
-                href="/"
-              >
+              <Link href="/">
                 <a className="px-6 py-3 hover:text-green-400">Pricing</a>
               </Link>
             </li>
             <li className="p-3">
-              <Link
-                href="/"
-              >
+              <Link href="/">
                 <a className="px-6 py-3 hover:text-green-400">Features</a>
               </Link>
             </li>
             <li className="p-3">
-              <Link
-                href="/"
-              >
+              <Link href="/">
                 <a className="px-6 py-3 hover:text-green-400">Story</a>
               </Link>
             </li>

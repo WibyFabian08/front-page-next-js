@@ -70,7 +70,7 @@ function DetailsCourse({ data }) {
             </h1>
           </div>
         </div>
-        <div className="container relative mx-auto z-20">
+        <div className="container absolute left-0 right-0 top-0 mx-auto z-20">
           <Header onDark login></Header>
         </div>
       </section>

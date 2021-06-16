@@ -78,7 +78,7 @@ function Courses({ data }) {
           </p>
         </div>
 
-        <div className="container relative mx-auto z-20 pt-10">
+        <div className="container relative mx-auto z-20 -mt-10 md:mt-0">
           <Header onDark login></Header>
         </div>
       </section>

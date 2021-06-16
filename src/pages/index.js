@@ -24,7 +24,7 @@ function Home({ data }) {
         <section className="header-clipping">
           <div className="sunshine"></div>
           <Circle className="bottom-4 left-0 absolute hidden lg:block accent-circle"></Circle>
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 mt-0 md:-mt-10">
             <Header onDark login></Header>
             <div style={{ height: 50 }}></div>
             <Hero></Hero>
